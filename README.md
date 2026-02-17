@@ -17,12 +17,12 @@ The rvalid signal is asserted by the slave in the next cycle after the AR handsh
 When the master asserts a signal "rready" signifying that it can accept the read data, the R handshake takes place and an output "rdata" is assigned the data in the register at the latched address gotten during AR handshake.
 The R handshake happens only when both rvalid and rready are high i.e rvalid&&rready.
 
- # The response signal (rresp)
+ ### The response signal (rresp)
 The AXI4-Lite spec demands a response signal from the slave to the master signifying the success of the read transaction.
 According to the AXI4-Lite spec, there is a response signal named "rresp" which can throw one of the 2 responses which are - SLVERR (slave error) and OKAY.
 OKAY signifies that the read transaction has taken place successfully. The SLVERR signifies many possible violations but the one used in the design is of the error of invalid read address.
 SLVERR is encoded as 2'b10 and OKAY is encoded as 2'b00.
-  # IMPORTANT
+  #### IMPORTANT
 The AXI4-Lite spec specifically states that even if SLVERR is thrown, the read transaction MUST NOT be paused,stopped or aborted and it must carry out as intended but the slave has to give the response as SLVERR to the master.
 
 ## Write channel operation
@@ -52,12 +52,12 @@ The transition in this case is --> idle to resp iff AW_handshake signals && W_ha
 Resp state is the final state where the actual writing of data takes place.
 The "bvalid" and "bready" signals are used to signify the status of the transaction and "bresp" is the response signal thrown by the slave.
 
-# The response signal (bresp)
+### The response signal (bresp)
 The AXI4-Lite spec demands a response signal from the slave to the master signifying success of the write transaction.
 According to the AXI4-Lite spec, there is a response signal named "bresp" which can throw one of the 2 responses which are - SLVERR (slave error) and OKAY.
 OKAY signifies that the write transaction has taken place successfully. The SLVERR signifies many possible violations but the one used in the design is of the error of invalid write address.
 SLVERR is encoded as 2'b10 and OKAY is encoded as 2'b00.
- # IMPORTANT
+ #### IMPORTANT
 Like in the read channel description of the response (refer rresp), AXI4-Lite spec specifically states that even if SLVERR is thrown, the write transaction MUST NOT be paused,stopped or aborted and it must carry out as intended but
 the slave has to give the response as SLVERR to the master.
 
