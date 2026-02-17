@@ -5,6 +5,7 @@ AXI4-Lite slave interface in Verilog with FSM-based read/write channels
 An AXI4-Lite slave/subordinate is a protocol designed by ARM under the AMBA (Advanced Microcontroller Bus Architecture) family. It has a few features such as single-outstanding write transaction and independent read and write channels. 
 It is widely used in the industry and is a standard protocol for intra-system communication.
 I have used a register array of 128 registers each of 32 bits i.e 128 x 32-bit register mapping.
+
 A Moore-style FSM was used to map the working of write channel and flag-based design was chosen for read channel.
 The terms master/slave are used in accordance with the legacy AXI signal naming. The newer versions use manager/subordinate.
 
