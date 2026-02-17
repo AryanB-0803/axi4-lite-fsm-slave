@@ -106,7 +106,7 @@ Tools used are - iverilog (for simulation) and GTKWave (for waveform analysis)
 The waveform generated after the simulation is as shown below : 
 
 <p align="center">
-  <img src="axi-lite-slave-verilog/docs/S_AXI_gtkwave_waveform.png" 
+  <img src="docs/S_AXI_gtkwave_waveform.png" 
        alt="AXI4-Lite Slave GTKWave Verification Waveform" 
        width="900">
 </p>
