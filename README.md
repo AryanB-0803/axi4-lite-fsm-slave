@@ -90,7 +90,7 @@ AXI4-Lite supports only a single outstanding transaction per channel since it do
 To enforce this for the read channel, arready is driven using simple combinational logic in my design.
 The code snippet is as follows :
 
-  ## assign arready = ~rvalid
+  # assign arready = ~rvalid
   
 This makes sure that arready becomes low whenever rvalid becomes high and vice-versa. This ensures that only one outstanding read transaction requirement is met.
 
